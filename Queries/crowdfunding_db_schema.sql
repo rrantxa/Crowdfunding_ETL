@@ -1,3 +1,4 @@
+-- NOTE : The ALTER TABLE constraint didn't seem necessary to add to the tables, as they already had their primary and foreign keys from the moment they were created. 
 CREATE TABLE campaign(
 	cf_id INT NOT NULL,
 	contact_id INT NOT NULL,
@@ -46,3 +47,15 @@ CREATE TABLE contacts (
 );	
 
 SELECT * FROM contacts;
+
+CREATE TABLE backers (
+	backer_id VARCHAR(10) NOT NULL,
+	cf_id INT NOT NULL,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	PRIMARY KEY (backer_id),
+	FOREIGN KEY (cf_id) REFERENCES campaign (cf_id)
+);
+
+SELECT * FROM backers;
