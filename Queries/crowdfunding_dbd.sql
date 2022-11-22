@@ -38,4 +38,4 @@ backer_id varchar(10) PK
 cf_id int FK >- campaign.cf_id
 first_name varchar(50)
 last_name varchar(50)
-email varchar(100) FK - contacts.email
+email varchar(100)
